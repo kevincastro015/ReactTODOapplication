@@ -15,6 +15,7 @@ export function Home() {
 				className="input"
 				placeholder="What needs to be done"
 				onChange={e => setTodo(e.target.value)}
+				value={todo}
 			/>
 			<button
 				className="btn btn-success"
@@ -25,7 +26,15 @@ export function Home() {
 				Add
 			</button>
 			{list.map((element, index) => {
-				return <div key={index}>{element}</div>;
+				return (
+					<div key={index}>
+						{element}
+						<button
+							onClick={() =>
+								setList(list.filter(item => element !== item))
+							}></button>
+					</div>
+				);
 			})}
 		</div>
 	);
