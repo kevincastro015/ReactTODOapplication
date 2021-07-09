@@ -11,10 +11,10 @@ export function Home() {
 
 	return (
 		<div
-			className="text-center mt-5 bg-light mx-auto p-4"
+			className="mt-5 bg-light mx-auto p-4 text-secondary"
 			style={{ width: 400 }}>
-			<h1>todos</h1>
-			<div className="border">
+			<h1 className="text-center">todos</h1>
+			<div className="border text-center ">
 				<input
 					className="input"
 					placeholder="What needs to be done"
@@ -22,7 +22,7 @@ export function Home() {
 					value={todo}
 				/>
 				<button
-					className="btn btn-success"
+					className="btn btn-success text-center "
 					onClick={() => {
 						setList([...list, todo]);
 						setTodo("");
@@ -31,7 +31,9 @@ export function Home() {
 				</button>
 				{list.map((element, index) => {
 					return (
-						<div className="border-top border-bottom" key={index}>
+						<div
+							className="border-top border-bottom text-secondary text-center"
+							key={index}>
 							{element}
 							<button
 								onClick={() =>
@@ -44,7 +46,9 @@ export function Home() {
 						</div>
 					);
 				})}
-				<div className="counter">Item(s) Left {list.length}</div>
+				<div className="counter text-secondary text-left">
+					Item(s) Left {list.length}
+				</div>
 			</div>
 			<div
 				className="border mx-auto"
